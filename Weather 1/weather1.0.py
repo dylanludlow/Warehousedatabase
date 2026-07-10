@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 LATITUDE = 53.3498
 LONGITUDE = -6.2603
-CACHE_FILE = "weather_cache.json"
+CACHE_FILE = "../Rain forecast/weather_cache.json"
 
 
 class WeatherForecast:
