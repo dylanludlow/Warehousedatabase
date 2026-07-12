@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Expense Tracker — {% block title %}{% endblock %}</title>
+
+
+
+  <!-- Spectre.css from a CDN (needs internet the first time) -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spectre.css/dist/spectre.min.css">
+
+  <!-- Our own styles -->
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+
+
+  <header class="app-header">
+
+    <div class="page-wrap">
+
+      <div class="navbar">
+
+        <section class="navbar-section">
+
+          <span class="app-title">💰 Expense Tracker</span>
+
+        </section>
+
+        <section class="navbar-section">
+
+          <a href="{{ url_for('index') }}"   class="btn btn-link text-light">Dashboard</a>
+
+          <a href="{{ url_for('history') }}" class="btn btn-link text-light">History</a>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <main class="page-wrap">
+
+    {% block content %}{% endblock %}
+
+  </main>
+
+
+
+  <footer class="app-footer">
+
+    My Personal Expense Tracker
+
+  </footer>
+
+
+
+</body>
+
+</html>

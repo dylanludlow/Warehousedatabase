@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+ 
+
+{% block content %}
+
+  <!-- Three summary cards: balance, income, expenses -->
+
+  <div class="columns summary-grid">
+
+    <div class="column col-4 col-sm-12">
+
+      <div class="card stat-card">
+
+        <div class="stat-label">Current Balance</div>
+
+        <div class="stat-value is-balance">€ {{ "%.2f"|format(balance) }}</div>
+
+      </div>
+
+    </div>
+
+    <div class="column col-4 col-sm-12">
+
+      <div class="card stat-card">
+
+        <div class="stat-label">Total Income</div>
+
+        <div class="stat-value is-income">€ {{ "%.2f"|format(income) }}</div>
+
+      </div>
+
+    </div>
+
+    <div class="column col-4 col-sm-12">
+
+      <div class="card stat-card">
+
+        <div class="stat-label">Total Expenses</div>
+
+        <div class="stat-value is-expense">€ {{ "%.2f"|format(expenses) }}</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+ 
+
+  <!-- Action button -->
+
+  <div class="columns action-grid">
+
+    <div class="column col-6 col-sm-12 mb-2">
+
+      <a href="{{ url_for('add') }}" class="btn btn-primary">
+
+        + Add Transaction
+
+      </a>
+
+    </div>
+
+    <div class="column col-6 col-sm-12 mb-2">
+
+      <a href="{{ url_for('history') }}" class="btn btn-secondary">
+
+        View History
+
+      </a>
+
+    </div>
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,223 @@
+/* ==========================================================================
+
+   Personal Expense Tracker — custom styles (layered on top of Spectre.css)
+
+   ========================================================================== */
+
+
+
+:root {
+
+  --brand:       #5755d9;
+
+  --income:      #32b643; /* green  */
+
+  --expense:     #e85600; /* orange */
+
+  --bg:          #f8f9fa;
+
+  --card-shadow: 0 .25rem .75rem rgba(48, 55, 66, .15);
+
+}
+
+
+
+body {
+
+  background-color: var(--bg);
+
+}
+
+
+
+/* ---- Header ------------------------------------------------------------- */
+
+.app-header {
+
+  background: var(--brand);
+
+  color: #fff;
+
+  padding: .75rem 0;
+
+  margin-bottom: 1.5rem;
+
+  box-shadow: var(--card-shadow);
+
+}
+
+
+
+.app-header .app-title {
+
+  font-size: 1.3rem;
+
+  font-weight: 600;
+
+  color: #fff;
+
+}
+
+
+
+.app-header .navbar-section .btn {
+
+  margin-left: .4rem;
+
+}
+
+
+
+/* ---- Page container ----------------------------------------------------- */
+
+.page-wrap {
+
+  max-width: 960px;
+
+  margin: 0 auto;
+
+  padding: 0 .8rem 3rem;
+
+}
+
+
+
+/* ---- Summary cards ------------------------------------------------------ */
+
+.summary-grid {
+
+  margin-bottom: 1.5rem;
+
+}
+
+
+
+.stat-card {
+
+  border: none;
+
+  box-shadow: var(--card-shadow);
+
+  text-align: center;
+
+  padding: 1.4rem 1rem;
+
+}
+
+
+
+.stat-card .stat-label {
+
+  text-transform: uppercase;
+
+  letter-spacing: .05rem;
+
+  font-size: .7rem;
+
+  color: #667189;
+
+  margin-bottom: .3rem;
+
+}
+
+
+
+.stat-card .stat-value {
+
+  font-size: 1.8rem;
+
+  font-weight: 700;
+
+}
+
+
+
+.stat-value.is-balance { color: var(--brand);   }
+
+.stat-value.is-income  { color: var(--income);  }
+
+.stat-value.is-expense { color: var(--expense); }
+
+
+
+/* ---- Action buttons ----------------------------------------------------- */
+
+.action-grid .btn {
+
+  width: 100%;
+
+  min-height: 3.5rem;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+
+
+/* ---- Form card ---------------------------------------------------------- */
+
+.form-card {
+
+  background: #fff;
+
+  border-radius: .2rem;
+
+  box-shadow: var(--card-shadow);
+
+  padding: 1.6rem 1.8rem;
+
+}
+
+
+
+.form-card h2 {
+
+  margin-top: 0;
+
+  margin-bottom: 1.2rem;
+
+}
+
+
+
+.form-actions {
+
+  margin-top: 1.4rem;
+
+  display: flex;
+
+  gap: .6rem;
+
+}
+
+
+
+/* ---- History table amounts ---------------------------------------------- */
+
+.history-table td.amount-positive { color: var(--income);  font-weight: 600; }
+
+.history-table td.amount-negative { color: var(--expense); font-weight: 600; }
+
+
+
+/* ---- Footer ------------------------------------------------------------- */
+
+.app-footer {
+
+  text-align: center;
+
+  color: #acb3c2;
+
+  font-size: .75rem;
+
+  padding: 2rem 0 1rem;
+
+}

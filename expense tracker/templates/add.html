@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %}Add Transaction{% endblock %}
+
+ 
+
+{% block content %}
+
+  <div class="breadcrumb">
+
+    <a href="{{ url_for('index') }}">Dashboard</a> &nbsp;›&nbsp; <span>Add transaction</span>
+
+  </div>
+
+ 
+
+  <!-- If the backend sent an error message, show it here -->
+
+  {% if error %}
+
+    <div class="toast toast-error">{{ error }}</div>
+
+  {% endif %}
+
+ 
+
+  <div class="form-card">
+
+    <h2>Add a Transaction</h2>
+
+ 
+
+    <form action="{{ url_for('add') }}" method="post" novalidate>
+
+ 
+
+      <div class="form-group">
+
+        <label class="form-label" for="type">Type</label>
+
+        <select class="form-select" id="type" name="type" required>
+
+          <option value="" disabled {{ 'selected' if not form }}>Choose…</option>
+
+          <option value="income"  {{ 'selected' if form and form.type == 'income' }}>Income</option>
+
+          <option value="expense" {{ 'selected' if form and form.type == 'expense' }}>Expense</option>
+
+        </select>
+
+      </div>
+
+ 
+
+      <div class="form-group">
+
+        <label class="form-label" for="category">Category</label>
+
+        <input class="form-input" type="text" id="category" name="category"
+
+               value="{{ form.category if form else '' }}"
+
+               placeholder="e.g. Food, Rent, Salary" required>
+
+      </div>
+
+ 
+
+      <div class="form-group">
+
+        <label class="form-label" for="amount">Amount (€)</label>
+
+        <input class="form-input" type="number" id="amount" name="amount"
+
+               value="{{ form.amount if form else '' }}"
+
+               min="0" step="0.01" placeholder="0.00" required>
+
+      </div>
+
+ 
+
+      <div class="form-group">
+
+        <label class="form-label" for="description">Description (optional)</label>
+
+        <input class="form-input" type="text" id="description" name="description"
+
+               value="{{ form.description if form else '' }}"
+
+               placeholder="e.g. Weekly grocery shop">
+
+      </div>
+
+ 
+
+      <div class="form-actions">
+
+        <button type="submit" class="btn btn-primary">Save</button>
+
+        <a href="{{ url_for('index') }}" class="btn btn-link">Cancel</a>
+
+      </div>
+
+ 
+
+    </form>
+
+  </div>
+
+{% endblock %}
