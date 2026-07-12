@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Warehouse &amp; Accounting — Dashboard</title>
+
+
+
+  <!-- Spectre.css (CDN) -->
+
+  <link rel="stylesheet" href=https://cdn.jsdelivr.net/npm/spectre.css/dist/spectre.min.css>
+
+  <link rel="stylesheet" href=https://cdn.jsdelivr.net/npm/spectre.css/dist/spectre-icons.min.css>
+
+  <!-- Custom styles -->
+
+  <link rel="stylesheet" href="static/style.css">
+
+</head>
+
+<body>
+
+
+
+  <!-- ===================== Header / nav ===================== -->
+
+  <header class="app-header">
+
+    <div class="page-wrap">
+
+      <div class="navbar">
+
+        <section class="navbar-section">
+
+          <span class="app-title">📦 Warehouse &amp; Accounting</span>
+
+        </section>
+
+        <section class="navbar-section">
+
+          <a href="index.html"   class="btn btn-link text-light">Dashboard</a>
+
+          <a href="history.html" class="btn btn-link text-light">History</a>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <main class="page-wrap">
+
+
+
+    <!-- ===================== Summary cards ===================== -->
+
+    <div class="columns summary-grid">
+
+      <div class="column col-6 col-sm-12">
+
+        <div class="card stat-card">
+
+          <div class="stat-label">Current Stock Level</div>
+
+          <div class="stat-value is-stock">1,240 <span class="text-gray" style="font-size:1rem;">pcs</span></div>
+
+        </div>
+
+      </div>
+
+      <div class="column col-6 col-sm-12">
+
+        <div class="card stat-card">
+
+          <div class="stat-label">Current Account Balance</div>
+
+          <div class="stat-value is-balance">€ 18,450.00</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ===================== Action buttons ===================== -->
+
+    <div class="columns action-grid">
+
+      <div class="column col-4 col-sm-12 mb-2">
+
+        <a href="purchase.html" class="btn btn-primary">
+
+          Purchase
+
+          <span class="action-sub">Add stock &amp; record cost</span>
+
+        </a>
+
+      </div>
+
+      <div class="column col-4 col-sm-12 mb-2">
+
+        <a href="sale.html" class="btn btn-success">
+
+          Sale
+
+          <span class="action-sub">Remove stock &amp; record revenue</span>
+
+        </a>
+
+      </div>
+
+      <div class="column col-4 col-sm-12 mb-2">
+
+        <a href="balance.html" class="btn btn-secondary">
+
+          Balance Change
+
+          <span class="action-sub">Adjust account balance</span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+
+  </main>
+
+
+
+  <footer class="app-footer">
+
+    Warehouse &amp; Accounting System — front-end prototype
+
+  </footer>
+
+
+
+</body>
+
+</html>

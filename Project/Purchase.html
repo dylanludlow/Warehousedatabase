@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Warehouse &amp; Accounting — Purchase</title>
+
+
+
+  <link rel="stylesheet" href=https://cdn.jsdelivr.net/npm/spectre.css/dist/spectre.min.css>
+
+  <link rel="stylesheet" href=https://cdn.jsdelivr.net/npm/spectre.css/dist/spectre-icons.min.css>
+
+  <link rel="stylesheet" href="static/style.css">
+
+</head>
+
+<body>
+
+
+
+  <header class="app-header">
+
+    <div class="page-wrap">
+
+      <div class="navbar">
+
+        <section class="navbar-section">
+
+          <span class="app-title">📦 Warehouse &amp; Accounting</span>
+
+        </section>
+
+        <section class="navbar-section">
+
+          <a href="index.html"   class="btn btn-link text-light">Dashboard</a>
+
+          <a href="history.html" class="btn btn-link text-light">History</a>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <main class="page-wrap">
+
+
+
+    <div class="breadcrumb">
+
+      <a href="index.html">Dashboard</a> &nbsp;›&nbsp; <span>Purchase</span>
+
+    </div>
+
+
+
+    <!-- Example error banner — shown when submitted data is invalid.
+
+         Remove the 'd-hide' class (or toggle it server-side) to display. -->
+
+    <div class="toast toast-error d-hide" id="error-banner">
+
+      Please correct the highlighted fields and submit again.
+
+    </div>
+
+
+
+    <div class="form-card">
+
+      <h2>Record a Purchase</h2>
+
+
+
+      <!-- action/method are placeholders for the Flask step -->
+
+      <form action="/purchase/" method="post" novalidate>
+
+
+
+        <div class="form-group">
+
+          <label class="form-label" for="product-name">Product name</label>
+
+          <input class="form-input" type="text" id="product-name" name="product_name"
+
+                 placeholder="e.g. Widget A" required>
+
+        </div>
+
+
+
+        <div class="form-group">
+
+          <label class="form-label" for="unit-price">Unit price (€)</label>
+
+          <input class="form-input" type="number" id="unit-price" name="unit_price"
+
+                 min="0" step="0.01" placeholder="0.00" required>
+
+        </div>
+
+
+
+        <div class="form-group">
+
+          <label class="form-label" for="pieces">Number of pieces</label>
+
+          <input class="form-input" type="number" id="pieces" name="pieces"
+
+                 min="1" step="1" placeholder="0" required>
+
+        </div>
+
+
+
+        <div class="form-actions">
+
+          <button type="submit" class="btn btn-primary">Submit purchase</button>
+
+          <a href="index.html" class="btn btn-link">Cancel</a>
+
+        </div>
+
+
+
+      </form>
+
+    </div>
+
+
+
+  </main>
+
+
+
+  <footer class="app-footer">
+
+    Warehouse &amp; Accounting System — front-end prototype
+
+  </footer>
+
+
+
+</body>
+
+</html>

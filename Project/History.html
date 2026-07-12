@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Warehouse &amp; Accounting — History</title>
+
+
+
+  <link rel="stylesheet" href=https://cdn.jsdelivr.net/npm/spectre.css/dist/spectre.min.css>
+
+  <link rel="stylesheet" href=https://cdn.jsdelivr.net/npm/spectre.css/dist/spectre-icons.min.css>
+
+  <link rel="stylesheet" href="static/style.css">
+
+</head>
+
+<body>
+
+
+
+  <header class="app-header">
+
+    <div class="page-wrap">
+
+      <div class="navbar">
+
+        <section class="navbar-section">
+
+          <span class="app-title">📦 Warehouse &amp; Accounting</span>
+
+        </section>
+
+        <section class="navbar-section">
+
+          <a href="index.html"   class="btn btn-link text-light">Dashboard</a>
+
+          <a href="history.html" class="btn btn-link text-light">History</a>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <main class="page-wrap">
+
+
+
+    <div class="breadcrumb">
+
+      <a href="index.html">Dashboard</a> &nbsp;›&nbsp; <span>History</span>
+
+    </div>
+
+
+
+    <div class="form-card">
+
+      <h2>Transaction History</h2>
+
+
+
+      <!-- Optional range filter.
+
+           In the Flask step this maps to:
+
+             /history/                       → show all
+
+             /history/<line_from>/<line_to>/ → show a range -->
+
+      <form action="/history/" method="get" class="mb-2">
+
+        <div class="columns">
+
+          <div class="column col-4 col-sm-12">
+
+            <label class="form-label" for="line-from">From (line #)</label>
+
+            <input class="form-input" type="number" id="line-from" name="line_from"
+
+                   min="1" step="1" placeholder="1">
+
+          </div>
+
+          <div class="column col-4 col-sm-12">
+
+            <label class="form-label" for="line-to">To (line #)</label>
+
+            <input class="form-input" type="number" id="line-to" name="line_to"
+
+                   min="1" step="1" placeholder="e.g. 25">
+
+          </div>
+
+          <div class="column col-4 col-sm-12" style="display:flex; align-items:flex-end;">
+
+            <button type="submit" class="btn btn-primary mr-1">Filter</button>
+
+            <a href="history.html" class="btn btn-link">Show all</a>
+
+          </div>
+
+        </div>
+
+        <p class="text-gray text-small mt-1">
+
+          Leave both fields blank to display the full history.
+
+        </p>
+
+      </form>
+
+
+
+      <!-- Sample rows — these will be generated server-side in the Flask step -->
+
+      <table class="table table-striped table-hover history-table">
+
+        <thead>
+
+          <tr>
+
+            <th>#</th>
+
+            <th>Date</th>
+
+            <th>Type</th>
+
+            <th>Product</th>
+
+            <th class="text-right">Unit price</th>
+
+            <th class="text-right">Pieces</th>
+
+            <th class="text-right">Amount</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+
+            <td>1</td>
+
+            <td>2026-07-01</td>
+
+            <td><span class="label label-primary type-badge">Purchase</span></td>
+
+            <td>Widget A</td>
+
+            <td class="text-right">€ 4.50</td>
+
+            <td class="text-right">200</td>
+
+            <td class="text-right amount-negative">− € 900.00</td>
+
+          </tr>
+
+          <tr>
+
+            <td>2</td>
+
+            <td>2026-07-02</td>
+
+            <td><span class="label label-success type-badge">Sale</span></td>
+
+            <td>Widget A</td>
+
+            <td class="text-right">€ 7.00</td>
+
+            <td class="text-right">120</td>
+
+            <td class="text-right amount-positive">+ € 840.00</td>
+
+          </tr>
+
+          <tr>
+
+            <td>3</td>
+
+            <td>2026-07-03</td>
+
+            <td><span class="label label-secondary type-badge">Balance</span></td>
+
+            <td>— (credit)</td>
+
+            <td class="text-right">—</td>
+
+            <td class="text-right">—</td>
+
+            <td class="text-right amount-positive">+ € 2,000.00</td>
+
+          </tr>
+
+          <tr>
+
+            <td>4</td>
+
+            <td>2026-07-04</td>
+
+            <td><span class="label label-secondary type-badge">Balance</span></td>
+
+            <td>— (debit)</td>
+
+            <td class="text-right">—</td>
+
+            <td class="text-right">—</td>
+
+            <td class="text-right amount-negative">− € 350.00</td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+
+
+    </div>
+
+
+
+  </main>
+
+
+
+  <footer class="app-footer">
+
+    Warehouse &amp; Accounting System — front-end prototype
+
+  </footer>
+
+
+
+</body>
+
+</html>
